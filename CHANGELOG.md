@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.24] - Update Changelog
+- Suport dart version 3.0.0.
+
 ## [0.0.23] - Update Changelog
 - Added entry for version 0.0.23.
 - Minor cleanup and maintenance updates.
