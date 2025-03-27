@@ -56,7 +56,7 @@ print(nida.nidaFormat()); // 00000000-00000-00000-00
 
 ---
 
-### 🏥 ncard / Health Card Format
+### 🆔 NCard Format
 
 ```dart
 String n = '0000000000000000';
