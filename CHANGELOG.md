@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.25] - Update Changelog
+- Suport dart version >=2.17.0 <4.0.0 and flutter  >=2.0.0 for null safety.
+
 ## [0.0.24] - Update Changelog
 - Suport dart version 3.0.0.
 
