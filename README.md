@@ -19,11 +19,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  id_card_formatter:
-    git:
-      url: https://github.com/hemmy6894/id_card_formatter
-
-  intl: ^0.20.2
+  id_card_formatter: ^0.0.1
 ```
 
 ---
