@@ -1,7 +1,7 @@
 name: id_card_formatter
 description: "CARD FORMATTER"
 version: 0.0.1
-homepage:
+homepage: https://github.com/hemmy6894/id_card_formatter
 license: MIT
 
 environment:
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.20.2
+  intl: any
 
 dev_dependencies:
   flutter_test:

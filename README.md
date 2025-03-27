@@ -21,7 +21,7 @@ Add this to your `pubspec.yaml`:
 dependencies:
   id_card_formatter:
     git:
-      url: <YOUR_REPO_URL>
+      url: https://github.com/hemmy6894/id_card_formatter
 
   intl: ^0.20.2
 ```
@@ -107,3 +107,13 @@ Pull requests and issues are welcome! Let’s make Tanzanian Flutter utilities a
 
 ---
 # id_card_formatter
+
+## 👨‍💻 Author
+
+**Collaborators**  
+📧 [hmanyinja@gmail.com](mailto:hmanyinja@gmail.com)  
+🌐 [@hemmy6894](https://github.com/hemmy6894)
+🌐 [@barakadewise](https://github.com/barakadewise)
+🌐 [@tfkcodes](https://github.com/tfkcodes)
+
+Made with ❤️ in Tanzania 🇹🇿
