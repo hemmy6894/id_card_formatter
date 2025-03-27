@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.23] - Update Changelog
+- Added entry for version 0.0.23.
+- Minor cleanup and maintenance updates.
+
 ## [0.0.22] - Update Changelog
 - Added entry for version 0.0.22.
 - Minor cleanup and maintenance updates.

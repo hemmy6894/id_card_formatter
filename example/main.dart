@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:id_card_formatter/double_format.dart';
-import 'package:id_card_formatter/id_format.dart';
+import 'package:id_card_formatter/id_card_formatter.dart';
 
 void main() {
   runApp(const MyApp());

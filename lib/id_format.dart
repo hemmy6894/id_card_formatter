@@ -1,3 +1,5 @@
+part of 'package:id_card_formatter/id_card_formatter.dart';
+
 extension IDFormatter on String {
   String nidaFormat() {
     final digits = replaceAll(RegExp(r'\D'), '');

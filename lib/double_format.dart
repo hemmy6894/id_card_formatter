@@ -1,3 +1,4 @@
+part of 'package:id_card_formatter/id_card_formatter.dart';
 extension MoneyFormatter on double {
   String toFormat({
     String symbol = 'TZS',
