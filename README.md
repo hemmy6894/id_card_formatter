@@ -1,6 +1,6 @@
 # 🇹🇿 ID Card Formatter
 
-**A lightweight Flutter/Dart extension to format Tanzanian ID numbers** (NIDA, Voter ID, and NCARD card style). Also supports currency formatting using `intl`.
+**A lightweight Flutter/Dart extension to format Tanzanian ID numbers** (NIDA, Voter ID, and NCARD card style). Also supports currency formatting.
 
 ---
 
