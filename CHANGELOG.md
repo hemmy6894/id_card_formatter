@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.32] - Remove Linter Rules
+- Removed strict linter rules to improve compatibility and reduce build warnings in consuming projects.
+
 ## [0.0.31] - Update Changelog
 - Refactored Tanzanian ID formatting logic for better accuracy and maintainability.
 
