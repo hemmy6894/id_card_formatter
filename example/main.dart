@@ -28,11 +28,14 @@ class _FormatterHomePageState extends State<FormatterHomePage> {
   final _nhifController = TextEditingController();
   final _voterController = TextEditingController();
   final _amountController = TextEditingController();
+  final _genericValueController = TextEditingController();
+  final _genericFormatController = TextEditingController();
 
   String formattedNida = '';
   String formattedNhif = '';
   String formattedVoter = '';
   String formattedAmount = '';
+  String formattedGeneric = '';
 
   void _formatInputs() {
     setState(() {
@@ -41,6 +44,10 @@ class _FormatterHomePageState extends State<FormatterHomePage> {
       formattedVoter = _voterController.text.tzVoterFormat();
       double? amount = double.tryParse(_amountController.text);
       formattedAmount = amount != null ? amount.toFormat() : 'Invalid amount';
+
+      String raw = _genericValueController.text;
+      String format = _genericFormatController.text;
+      formattedGeneric = raw.genericFormat(format: format);
     });
   }
 
@@ -59,7 +66,8 @@ class _FormatterHomePageState extends State<FormatterHomePage> {
             ),
             TextField(
               controller: _nhifController,
-              decoration: const InputDecoration(labelText: 'Enter NHIF Card Number'),
+              decoration:
+                  const InputDecoration(labelText: 'Enter NHIF Card Number'),
               keyboardType: TextInputType.number,
             ),
             TextField(
@@ -72,6 +80,17 @@ class _FormatterHomePageState extends State<FormatterHomePage> {
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 16),
+            const Divider(),
+            TextField(
+              controller: _genericValueController,
+              decoration: const InputDecoration(labelText: 'Generic Input'),
+            ),
+            TextField(
+              controller: _genericFormatController,
+              decoration: const InputDecoration(
+                  labelText: 'Generic Format (e.g. XXX-XXX-XXX)'),
+            ),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _formatInputs,
               child: const Text('Format'),
@@ -81,6 +100,7 @@ class _FormatterHomePageState extends State<FormatterHomePage> {
             Text('Formatted NHIF: $formattedNhif'),
             Text('Formatted Voter: $formattedVoter'),
             Text('Formatted Amount: $formattedAmount'),
+            Text('Formatted Generic: $formattedGeneric'),
           ],
         ),
       ),

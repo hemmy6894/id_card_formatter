@@ -1,5 +1,17 @@
 part of 'package:id_card_formatter/id_card_formatter.dart';
+
+/// An extension on [double] to format monetary values
+/// with thousands separators and an optional currency symbol.
 extension MoneyFormatter on double {
+  /// Converts the number into a currency-formatted string.
+  ///
+  /// [symbol] is the currency prefix (default: `'TZS'`).
+  /// [decimalDigits] is the number of digits after the decimal point (default: `0`).
+  ///
+  /// Example:
+  /// ```dart
+  /// 1234567.89.toFormat(symbol: 'TZS', decimalDigits: 2); // 'TZS 1,234,567.89'
+  /// ```
   String toFormat({
     String symbol = 'TZS',
     int decimalDigits = 0,

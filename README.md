@@ -1,13 +1,14 @@
 # 🇹🇿 ID Card Formatter
 
-**A lightweight Flutter/Dart extension to format Tanzanian ID numbers** (NIDA, Voter ID, and NCARD card style). Also supports currency formatting.
+**A lightweight Flutter/Dart extension to format Tanzanian ID numbers** (**Generic Formatter**, NIDA, Voter ID, and NCARD card style). Also supports currency formatting and customizable generic ID formats.
 
 ---
 
 ## ✨ Features
 
+- 🆕 **Generic Formatter**: Format any string using a custom pattern like `XXX-XXX-XXX` or `T-XXX-XXX-XXX`
 - ✅ Format **NIDA ID** numbers like `00000000-00000-00000-00`
-- ✅ Format **Tanzanian Health Cards** (e.g. NCARD) as `XXXX XXXX XXXX XXXX`
+- ✅ Format **Tanzanian NCards** (e.g. NCARD) as `XXXX XXXX XXXX XXXX`
 - ✅ Format **Voter IDs** like `A-1234-5678-901-X`
 - ✅ Format `double` values into currency (e.g. `TZS 1,000,000`)
 
@@ -31,6 +32,18 @@ dependencies:
 ```dart
 import 'package:id_card_formatter/id_card_formatter.dart';
 ```
+---
+### 🎛️ Generic ID Format
+
+Format any ID using a custom pattern with `'X'` as placeholders.
+
+```dart
+print("123456789".genericIdFormat(format: "XXX-XXX-XXX"));       // 123-456-789
+print("T123456789".genericIdFormat(format: "X-XXX-XXX-XXX"));    // T-123-456-789
+print("123456789".genericIdFormat(format: "XXX XXX XXX"));       // 123 456 789
+```
+
+Use this when you need flexibility to support custom ID formats.
 
 ---
 
@@ -59,7 +72,7 @@ print(nida.nidaFormat()); // 00000000-00000-00000-00
 ### 🆔 NCard Format
 
 ```dart
-String n = '0000000000000000';
+String ncard = '0000000000000000';
 print(ncard.tzNcardFormat()); // 0000 0000 0000 0000
 ```
 
@@ -77,23 +90,22 @@ print(voter.tzVoterFormat()); // A-1234-5678-901-X
 ## 🔍 Extension Summary
 
 ### `String.nidaFormat()`
-
 Formats NIDA numbers:  
 `XXXXXXXX-XXXXX-XXXXX-XX`
 
 ### `String.tzNcardFormat()`
-
 Formats Ncard numbers:  
 `XXXX XXXX XXXX XXXX`
 
 ### `String.tzVoterFormat()`
-
 Formats Voter IDs:  
 `A-1234-5678-901-X`
 
-### `double.toFormat({locale, symbol, decimalDigits})`
+### `String.genericIdFormat({format})`
+Formats using a custom pattern:  
+Example: `"XXX-XXX-XXX"` → `123-456-789`
 
-Formats double to currency using `intl`.
+### `double.toFormat({locale, symbol, decimalDigits})`
 
 ---
 
@@ -102,14 +114,15 @@ Formats double to currency using `intl`.
 Pull requests and issues are welcome! Let’s make Tanzanian Flutter utilities awesome 🇹🇿✨
 
 ---
+
 # id_card_formatter
 
 ## 👨‍💻 Author
 
 **Collaborators**  
 📧 [hmanyinja@gmail.com](mailto:hmanyinja@gmail.com)  
-🌐 [@hemmy6894](https://github.com/hemmy6894)
-🌐 [@barakadewise](https://github.com/barakadewise)
+🌐 [@hemmy6894](https://github.com/hemmy6894)  
+🌐 [@barakadewise](https://github.com/barakadewise)  
 🌐 [@tfkcodes](https://github.com/tfkcodes)
 
 Made with ❤️ in Tanzania 🇹🇿

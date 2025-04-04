@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.30] - Update Changelog
+- Add Generic Format: Formats the string using the provided [format] pattern.
+- Providing good documentation for libraries, classes, functions, and other API elements improves code readability
 
 ## [0.0.25] - Update Changelog
 - Suport dart version >=2.17.0 <4.0.0 and flutter  >=2.0.0 for null safety.
