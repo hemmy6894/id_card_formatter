@@ -1,6 +1,6 @@
 name: id_card_formatter
-description: A Dart utility package for formatting Tanzanian IDs such as NIDA, voter ID, and national card numbers, with optional currency formatting support.
-version: 0.0.32
+description: A lightweight Flutter/Dart extension to format ID numbers (Generic Formatter, NIDA, phone number, Voter ID, and NCARD card style). Also supports currency formatting and customizable generic ID formats..
+version: 0.0.33
 homepage: https://github.com/hemmy6894/id_card_formatter
 license: MIT
 

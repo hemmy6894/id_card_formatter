@@ -1,12 +1,12 @@
-# 🇹🇿 ID Card Formatter
+# ID Card Formatter
 
-**A lightweight Flutter/Dart extension to format Tanzanian ID numbers** (**Generic Formatter**, NIDA, Voter ID, and NCARD card style). Also supports currency formatting and customizable generic ID formats.
+**A lightweight Flutter/Dart extension to format ID numbers** (**Generic Formatter**, NIDA, Voter ID, and NCARD card style). Also supports currency formatting and customizable generic ID formats.
 
 ---
 
 ## ✨ Features
 
-- 🆕 **Generic Formatter**: Format any string using a custom pattern like `XXX-XXX-XXX` or `T-XXX-XXX-XXX`
+- 🆕 **Generic Formatter**: Format any string using a custom pattern like `XXX-XXX-XXX` or `X-XXX-XXX-XXX`
 - ✅ Format **NIDA ID** numbers like `00000000-00000-00000-00`
 - ✅ Format **Tanzanian NCards** (e.g. NCARD) as `XXXX XXXX XXXX XXXX`
 - ✅ Format **Voter IDs** like `A-1234-5678-901-X`
@@ -20,7 +20,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  id_card_formatter: ^0.0.1
+  id_card_formatter: ^0.0.33
 ```
 
 ---
@@ -32,7 +32,9 @@ dependencies:
 ```dart
 import 'package:id_card_formatter/id_card_formatter.dart';
 ```
+
 ---
+
 ### 🎛️ Generic ID Format
 
 Format any ID using a custom pattern with `'X'` as placeholders.
@@ -56,6 +58,17 @@ print(amount.toFormat());                         // TZS 2,500,000
 print(amount.toFormat(decimalDigits: 2));         // TZS 2,500,000.00
 print(amount.toFormat(symbol: '\$'));             // $ 2,500,000
 print(amount.toFormat(locale: 'de_DE', symbol: '€')); // € 2.500.000
+```
+
+---
+
+### 🆔 PHONE NUMBER FORMAT
+
+```dart
+String phoneTz = '25512345789';
+print(phoneTz.phoneFormat()); // (+255) 123 456 789
+String phoneUs = '11234567890';
+print(phoneUs.phoneFormat(pattern: '(+X) XXX XXX XXXX')); // (+1) 123 456 7890
 ```
 
 ---
@@ -90,18 +103,22 @@ print(voter.tzVoterFormat()); // A-1234-5678-901-X
 ## 🔍 Extension Summary
 
 ### `String.nidaFormat()`
+
 Formats NIDA numbers:  
 `XXXXXXXX-XXXXX-XXXXX-XX`
 
 ### `String.tzNcardFormat()`
+
 Formats Ncard numbers:  
 `XXXX XXXX XXXX XXXX`
 
 ### `String.tzVoterFormat()`
+
 Formats Voter IDs:  
 `A-1234-5678-901-X`
 
 ### `String.genericFormat({format})`
+
 Formats using a custom pattern:  
 Example: `"XXX-XXX-XXX"` → `123-456-789`
 

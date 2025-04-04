@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:id_card_formatter/id_card_formatter.dart';
@@ -19,5 +21,11 @@ void main() {
     final genearicNCard =
         "1234567890123456".genericFormat(format: 'XXXX XXXX XXXX XXXX');
     expect(genearicNCard, '1234 5678 9012 3456');
+
+    final phone = "255123456789".phoneFormat();
+    expect(phone, '(+255) 123 456 789');
+
+      final phoneUs = "11234567890".phoneFormat(pattern: '(+X) XXX XXX XXXX');
+    expect(phoneUs, '(+1) 123 456 7890');
   });
 }
