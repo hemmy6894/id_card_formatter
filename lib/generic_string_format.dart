@@ -4,9 +4,9 @@ part of 'package:id_card_formatter/id_card_formatter.dart';
 ///
 /// Example usage:
 /// ```dart
-/// "T123456789".genericIdFormat(format: "T-XXX-XXX-XXX"); // T-123-456-789
-/// "123456789".genericIdFormat(format: "XXX XXX XXX");   // 123 456 789
-/// "123456789".genericIdFormat(format: "XXX-XXX-XXX");   // 123-456-789
+/// "T123456789".genericFormat(format: "T-XXX-XXX-XXX"); // T-123-456-789
+/// "123456789".genericFormat(format: "XXX XXX XXX");   // 123 456 789
+/// "123456789".genericFormat(format: "XXX-XXX-XXX");   // 123-456-789
 /// ```
 extension GenericFormatter on String {
   /// Formats the string using the provided [format] pattern.
@@ -19,7 +19,7 @@ extension GenericFormatter on String {
   ///
   /// Example:
   /// ```dart
-  /// "123456789".genericIdFormat(format: "XXX-XXX-XXX"); // 123-456-789
+  /// "123456789".genericFormat(format: "XXX-XXX-XXX"); // 123-456-789
   /// ```
   String genericFormat({required String format}) {
     final cleanInput = replaceAll(RegExp(r'\s|-'), '');

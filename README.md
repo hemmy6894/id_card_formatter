@@ -38,9 +38,9 @@ import 'package:id_card_formatter/id_card_formatter.dart';
 Format any ID using a custom pattern with `'X'` as placeholders.
 
 ```dart
-print("123456789".genericIdFormat(format: "XXX-XXX-XXX"));       // 123-456-789
-print("T123456789".genericIdFormat(format: "X-XXX-XXX-XXX"));    // T-123-456-789
-print("123456789".genericIdFormat(format: "XXX XXX XXX"));       // 123 456 789
+print("123456789".genericFormat(format: "XXX-XXX-XXX"));       // 123-456-789
+print("T123456789".genericFormat(format: "X-XXX-XXX-XXX"));    // T-123-456-789
+print("123456789".genericFormat(format: "XXX XXX XXX"));       // 123 456 789
 ```
 
 Use this when you need flexibility to support custom ID formats.
@@ -101,7 +101,7 @@ Formats Ncard numbers:
 Formats Voter IDs:  
 `A-1234-5678-901-X`
 
-### `String.genericIdFormat({format})`
+### `String.genericFormat({format})`
 Formats using a custom pattern:  
 Example: `"XXX-XXX-XXX"` → `123-456-789`
 

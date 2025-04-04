@@ -1,28 +1,33 @@
 # Changelog
-## [0.0.30] - Update Changelog
-- Add Generic Format: Formats the string using the provided [format] pattern.
-- Providing good documentation for libraries, classes, functions, and other API elements improves code readability
 
-## [0.0.25] - Update Changelog
-- Suport dart version >=2.17.0 <4.0.0 and flutter  >=2.0.0 for null safety.
+## [0.0.31] - Update Changelog
+- Refactored Tanzanian ID formatting logic for better accuracy and maintainability.
 
-## [0.0.24] - Update Changelog
-- Suport dart version 3.0.0.
+## [0.0.30] - Add Generic Formatter
+- Introduced `genericIdFormat`: formats a string using a user-defined pattern like `"XXX-XXX-XXX"`.
+- Added DartDoc comments to improve documentation coverage and API readability.
 
-## [0.0.23] - Update Changelog
-- Added entry for version 0.0.23.
-- Minor cleanup and maintenance updates.
-- Break Changes
+## [0.0.25] - Compatibility Update
+- Updated to support Dart SDK `>=2.17.0 <4.0.0` and Flutter SDK `>=2.0.0`.
+- Ensured full null safety compatibility.
 
-## [0.0.22] - Update Changelog
-- Added entry for version 0.0.22.
-- Minor cleanup and maintenance updates.
+## [0.0.24] - Dart 3 Support
+- Official support for Dart `3.0.0`.
 
-## [0.0.21] - Update Readme
-- Updated the README file for clarity and completeness.
+## [0.0.23] - Maintenance & Breaking Changes
+- General code cleanup and minor optimizations.
+- **Breaking Changes**: Please review updated formatting methods.
 
-## [0.0.2] - Remove intl
+## [0.0.22] - Maintenance
+- Routine cleanup and stability updates.
+
+## [0.0.21] - README Improvements
+- Improved documentation for better clarity and usage examples.
+
+## [0.0.2] - Remove `intl` Dependency
 - Removed dependency on the `intl` package to reduce size and simplify the package.
 
-## [0.0.1] - First published
-- Initial release of the package.
+## [0.0.1] - Initial Release
+- First release of the package.
+- Added support for formatting NIDA, Voter, and NCard IDs.
+- Included basic currency formatting for `double` values.
