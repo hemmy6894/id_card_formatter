@@ -10,9 +10,9 @@
 - ✅ Format **NIDA ID** numbers like `00000000-00000-00000-00`
 - ✅ Format **Tanzanian NCards** (e.g. NCARD) as `XXXX XXXX XXXX XXXX`
 - ✅ Format **Voter IDs** like `A-1234-5678-901-X`
-- ✅ Format `double` values into currency (e.g. `TZS 1,000,000`)
-
----
+- ✅ Format **Double** values into currency (e.g. `TZS 1,000,000`)
+- ✅ Format **Phone number** example (Tz phone as `(+255) 123 456 789`)
+- 🆕 **Date Formatter**: Format dates in various styles, including `dd-MM-yyyy`, `yyyy/MM/dd`, `yyyy-MM-dd`, and more, with support for time (e.g., `HH:mm:ss`)
 
 ## 📦 Installation
 
@@ -31,6 +31,17 @@ dependencies:
 
 ```dart
 import 'package:id_card_formatter/id_card_formatter.dart';
+```
+
+---
+
+### 📅 Date format
+
+```dart
+String date = '12/08/2025'.
+print(date.toDateFormat('yyyy-MM-dd'));            // 2025-08-12
+print(date.toDateFormat('yyyy/MM/dd'));            // 2025/08/12
+print(date.toDateFormat('dd-MM-yyyy HH:mm:ss'));  // 12-08-2025 00:00:00
 ```
 
 ---
@@ -62,7 +73,7 @@ print(amount.toFormat(locale: 'de_DE', symbol: '€')); // € 2.500.000
 
 ---
 
-### 🆔 PHONE NUMBER FORMAT
+### 🆔 Phone Number Format
 
 ```dart
 String phoneTz = '25512345789';
@@ -73,7 +84,7 @@ print(phoneUs.phoneFormat(pattern: '(+X) XXX XXX XXXX')); // (+1) 123 456 7890
 
 ---
 
-### 🆔 NIDA ID Format
+### 🆔 Nida Format
 
 ```dart
 String nida = '0000000000000000000';
