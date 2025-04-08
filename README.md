@@ -7,6 +7,7 @@
 ## ✨ Features
 
 - 🆕 **Generic Formatter**: Format any string using a custom pattern like `XXX-XXX-XXX` or `X-XXX-XXX-XXX`
+- ✅ Format **Phone Number Format** numbers like `(+255) XXX XXX XXX`
 - ✅ Format **NIDA ID** numbers like `00000000-00000-00000-00`
 - ✅ Format **Tanzanian NCards** (e.g. NCARD) as `XXXX XXXX XXXX XXXX`
 - ✅ Format **Voter IDs** like `A-1234-5678-901-X`
