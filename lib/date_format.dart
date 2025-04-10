@@ -89,39 +89,68 @@ extension DateFormatter on String {
   /// Returns time in `HH:mm:ss` format.
   String get time => _parsedDate != null ? '$hour:$minute:$second' : '';
 
-  /// Converts the date into any custom format using supported patterns:
-  /// Supported patterns include:
-  /// - dd: day
-  /// - MM: month
-  /// - yyyy: full year
-  /// - yy: short year
-  /// - HH: hour
-  /// - mm: minute
-  /// - ss: second
-
-  // Month names mapping
-  static const List<String> _monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
-
+  /// Formats the current parsed date into a string based on the given pattern.
+  ///
+  /// The pattern supports the following placeholders:
+  /// - `dd`: Day of month (2 digits, e.g. '01', '12')
+  /// - `MM`: Month number (2 digits, e.g. '04', '12')
+  /// - `MMM`: Short month name (e.g. 'Jan', 'Dec')
+  /// - `MMMM`: Full month name (e.g. 'January', 'December')
+  /// - `yyyy`: Full year (e.g. '2025')
+  /// - `yy`: Last two digits of the year (e.g. '25')
+  /// - `HH`: Hour in 24-hour format (2 digits)
+  /// - `mm`: Minutes (2 digits)
+  /// - `ss`: Seconds (2 digits)
+  ///
+  /// Example:
+  /// ```dart
+  /// '12/08/2025'.toDateFormat('dd MMMM yyyy'); // returns '12 August 2025'
+  /// '12/08/2025'.toDateFormat('dd/MM/yyyy');   // returns '12/08/2025'
+  /// ```
+  ///
+  /// Returns an empty string if the parsed date is null.
   String toDateFormat(String pattern) {
     final date = _parsedDate;
     if (date == null) return '';
 
+    // Full month names
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+
+    // Short month names
+    const shortMonthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ];
+
+    // Mapping format tokens to corresponding values from the date
     final map = {
       'dd': _twoDigits(date.day),
       'MM': _twoDigits(date.month),
+      'MMM': shortMonthNames[date.month - 1],
+      'MMMM': monthNames[date.month - 1],
       'yyyy': date.year.toString(),
       'yy': date.year.toString().substring(2),
       'HH': _twoDigits(date.hour),
@@ -130,13 +159,21 @@ extension DateFormatter on String {
     };
 
     String formatted = pattern;
-    map.forEach((k, v) {
-      formatted = formatted.replaceAll(k, v);
-    });
+
+    // Replace longer format keys first to prevent partial replacements
+    final sortedKeys = map.keys.toList()
+      ..sort((a, b) => b.length.compareTo(a.length));
+
+    for (final key in sortedKeys) {
+      formatted = formatted.replaceAll(key, map[key]!);
+    }
+
     return formatted;
   }
 
-  /// Ensures numbers are two-digit padded with zeros if necessary.
+  /// Pads a number to ensure it is two digits (e.g. 7 becomes '07').
+  ///
+  /// Used for formatting day, month, hour, minute, and second values.
   String _twoDigits(int n) => n.toString().padLeft(2, '0');
 }
 

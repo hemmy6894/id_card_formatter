@@ -17,11 +17,9 @@ void main() {
         "T123456789012".genericFormat(format: 'X-XXXX-XXXX-XXX-X');
     expect(genearicVoter, 'T-1234-5678-901-2');
 
-
     final genearicNida =
         "12345678123451234512".genericFormat(format: 'XXXXXXXX-XXXXX-XXXXX-XX');
     expect(genearicNida, '12345678-12345-12345-12');
-    
 
     final genearicNCard =
         "1234567890123456".genericFormat(format: 'XXXX XXXX XXXX XXXX');
@@ -41,6 +39,8 @@ void main() {
     expect('2025.08.12'.toDateFormat('dd/MM/yyyy'), '12/08/2025');
     expect('2025-04-08T14:20:15'.toDateFormat('dd-MM-yyyy HH:mm:ss'),
         '08-04-2025 14:20:15');
+    expect('12/08/2025'.toDateFormat('dd MMMM yyyy'), '12 August 2025');
+    expect('12-08-2025'.toDateFormat('dd MMM yyyy'), '12 Aug 2025');
 
     // Weekday checks
     expect('2025-02-10'.weekdayName, 'Monday');
